@@ -37,7 +37,7 @@ model Order {
   id String @id @default(uuid())
 
   carId         String    @db.Text
-  carNam        String    @db.Text
+  carName       String    @db.Text
   userId        String    @db.Text
   orderDate     DateTime  @default(now())
   orderEndDate  DateTime  @default(now())
