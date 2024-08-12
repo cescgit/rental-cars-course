@@ -60,11 +60,11 @@ export function CardCar(props: CardCarProps) {
       />
 
       {car.isPublish ? (
-        <p className="absolute top-0 right-0 w-full p-1 text-center text-black bg-green-400/95 rounded-t-md">
+        <p className="absolute top-0 right-0 w-full p-1 text-center text-black bg-gray-400/85 rounded-t-md">
           Published
         </p>
       ) : (
-        <p className="absolute top-0 right-0 w-full p-1 text-center text-white bg-red-300 rounded-t-md">
+        <p className="absolute top-0 right-0 w-full p-1 text-center text-white bg-gray-700/85 rounded-t-md">
           Not Published
         </p>
       )}
@@ -126,7 +126,7 @@ export function CardCar(props: CardCarProps) {
           </Button>
         ) : (
           <Button
-            className="w-full mt-3 bg-gray-600 hover:bg-gray-700/85 text-white transition-all duration-150"
+            className="w-full mt-3 bg-gray-600 hover:bg-gray-700/85 hover:text-white text-white transition-all duration-150"
             variant="outline"
             onClick={() => handlerPublishCar(true)}
           >

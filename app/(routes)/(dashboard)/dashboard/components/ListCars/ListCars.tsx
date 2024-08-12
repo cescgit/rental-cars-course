@@ -2,11 +2,14 @@
 import { Car } from "@prisma/client";
 import { ListCarsProps } from "./ListCars.type";
 import Image from "next/image";
-import { Fuel, Gem, Heart, Users, Wrench } from "lucide-react";
+import { Fuel, Gauge, Gem, Heart, Users, Wrench } from "lucide-react";
 import { ModalAddReservation } from "@/components/Shared/ModalAddReservation/ModalAddReservation";
+import { useLovedCars } from "@/hooks/use-loved-car";
 
 export function ListCars(props: ListCarsProps) {
   const { cars } = props;
+  const { lovedItems, addLoveItem, removeLoveItem} = useLovedCars()
+
   return (
     <div className="grid grid-cols-1 gap-6 justify-items-center my-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {cars.map((car: Car) => {
@@ -19,10 +22,10 @@ export function ListCars(props: ListCarsProps) {
           photo,
           priceDay,
           engine,
-          type,
-          isPublish,
-          createdAt,
+          type
         } = car;
+
+        const likedCar = lovedItems.some((item) => item.id === car.id);
 
         return (
             <div key={id} className="p-1 rounded-lg shadow-md hover:shadow-lg">
@@ -48,12 +51,21 @@ export function ListCars(props: ListCarsProps) {
                         <Fuel className="size-4 mr-2" />
                         {engine}
                     </p>        
+                    <p className="flex items-center">
+                        <Gauge className="size-4 mr-2" />
+                        {horsep} CV
+                    </p>        
 
                     <div className="flex items-center justify-center gap-x-3">
                         <ModalAddReservation car={car} />
                         <Heart 
-                            className="mt-2 cursor-pointer"
-                            onClick={() => console.log("HEART")}
+                            className={`mt-2 cursor-pointer ${likedCar && "fill-red-500 stroke-red-500"}`}
+                            onClick={ 
+                                likedCar ? 
+                                () => removeLoveItem(car.id) 
+                                : 
+                                () => addLoveItem(car)
+                            }
                         />
                     </div>
                 </div>
