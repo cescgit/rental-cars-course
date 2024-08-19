@@ -4,8 +4,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { SidebarRoutes } from "../SidebarRoutes";
 import { UserButton } from "@clerk/nextjs";
+import Sidebar from "../Sidebar/Sidebar";
 
 export function NavbarDashboard() {
   return (
@@ -16,7 +16,7 @@ export function NavbarDashboard() {
             <Menu />
           </SheetTrigger>
           <SheetContent side="left">
-            <SidebarRoutes />
+            <Sidebar />
           </SheetContent>
         </Sheet>
       </div>

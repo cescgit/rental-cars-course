@@ -143,6 +143,8 @@ export function FormEditCar(props: FormEditCarProps) {
                     <SelectItem value="4">4</SelectItem>
                     <SelectItem value="5">5</SelectItem>
                     <SelectItem value="7">7</SelectItem>
+                    <SelectItem value="13">13</SelectItem>
+                    <SelectItem value="18">18</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
