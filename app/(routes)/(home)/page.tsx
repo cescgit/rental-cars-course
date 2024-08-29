@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Shared/Navbar";
 import { FirstBlock } from "./components/FirstBlock/FirstBlock";
+import { SliderBrands } from "./components/SlidersBrands";
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div>
         <Navbar />
         <FirstBlock />
+        <SliderBrands />
       </div>
     </div>
   );
