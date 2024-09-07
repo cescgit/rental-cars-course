@@ -16,7 +16,7 @@ import { ModalAddReservation } from "@/components/Shared/ModalAddReservation"
 
 export function ListLovedCars() {
 
-    const {lovedItems, removeLoveItem} = useLovedCars()    
+    const {lovedItems, removedLoveItem} = useLovedCars()    
 
   return (
     <div>
@@ -83,7 +83,7 @@ export function ListLovedCars() {
                       className={`mt-2 cursor-pointer ${
                         likedCar && "fill-red-500 stroke-red-500"
                       }`}
-                      onClick={() => removeLoveItem(car.id)}
+                      onClick={() => removedLoveItem(car.id)}
                     />
                   </div>
                 </div>
