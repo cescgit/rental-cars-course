@@ -17,18 +17,18 @@ export function FirstBlock() {
         </p>
       </Reveal>
 
-     <Reveal position="right" delay={2}>
-       <div className="flex justify-end">
-         <Image
-          className="drop-shadow-2xl"
-           src="/img/cr-v-thumbnail.png"
-           alt="Rent cars"
-           width={800}
-           height={800}
-           priority
-         />
-       </div>
-     </Reveal>
+      <Reveal position="right" delay={2}>
+        <div className="flex justify-end">
+          <Image
+            className="drop-shadow-2xl"
+            src="/img/hr-v-2022-lhd.webp"
+            alt="Rent cars"
+            width={800}
+            height={800}
+            priority
+          />
+        </div>
+      </Reveal>
     </div>
   );
 }

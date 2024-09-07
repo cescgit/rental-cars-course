@@ -8,7 +8,7 @@ import { useLovedCars } from "@/hooks/use-loved-car";
 
 export function ListCars(props: ListCarsProps) {
   const { cars } = props;
-  const { lovedItems, addLoveItem, removeLoveItem} = useLovedCars()
+  const { lovedItems, addLoveItem, removedLoveItem} = useLovedCars()
 
   return (
     <div className="grid grid-cols-1 gap-6 justify-items-center my-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -62,7 +62,7 @@ export function ListCars(props: ListCarsProps) {
                             className={`mt-2 cursor-pointer ${likedCar && "fill-red-500 stroke-red-500"}`}
                             onClick={ 
                                 likedCar ? 
-                                () => removeLoveItem(car.id) 
+                                () => removedLoveItem(car.id) 
                                 : 
                                 () => addLoveItem(car)
                             }

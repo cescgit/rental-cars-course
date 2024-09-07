@@ -8,7 +8,7 @@ import { set } from "date-fns"
 interface UseLovedCarsType {
     lovedItems: Car[],
     addLoveItem: (data: Car) => void,
-    removeLoveItem: (id: string) => void
+    removedLoveItem: (id: string) => void
 }
 
 export const useLovedCars = create(
@@ -35,7 +35,7 @@ export const useLovedCars = create(
             })
         },
 
-        removeLoveItem: (id: string) => {
+        removedLoveItem: (id: string) => {
             set({
                 lovedItems: [...get().lovedItems.filter((item) => item.id !== id)]
             })
