@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 
-export function pageOrderError() {
+export default function pageOrderError() {
   return (
     <div>
         <Navbar />
